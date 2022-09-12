@@ -49,11 +49,23 @@ We have tried many different architecture of models include baselines and our mo
 - [Code Link](https://colab.research.google.com/drive/1GFNBxcYfbNqtltdHGVLmRfCC-Q5a5ivK?usp=sharing)
 - This is a plain basline which has accumlated error with iteration prediction. The following models are all modified architectures except this.
 
+
+
 ![image](https://user-images.githubusercontent.com/24941293/189557086-16d00fe5-35d2-460b-814e-3edf8f0be8fd.png)
+
+How it predicts.
+
+![image](https://user-images.githubusercontent.com/24941293/189557510-435cc05f-4193-4fa5-84bf-e4ae914ef7b3.png)
+
 
 ## 2. LSTM + Linear + LinearX, LinearY
 - Add one more Linearr Layer to change the output to whole prediction.
 ![image](https://user-images.githubusercontent.com/24941293/189557107-f1de1bde-3805-43b9-98a9-c3c0e1ceaf2a.png)
+
+After changing the predict way.
+
+![image](https://user-images.githubusercontent.com/24941293/189557553-37f61a9f-d0c5-4e1b-b0fe-4ef87cd788dc.png)
+
 
 ## 3. LSTM + LinearXY
 - Remove the last two Linear output layers to increase the effect of LSTM on loss.
@@ -84,11 +96,19 @@ We have tried many different architecture of models include baselines and our mo
 ![image](https://user-images.githubusercontent.com/24941293/189557265-50f71c9e-6e4e-4649-9c29-e87d49aa50c4.png)
 
 
+# Training
+
+- In order to crop the data into the same shape and expand the training set data，we divide the single trajectory into several samples using sliding window.
+- We chose the five features contain target x, y, speed, acceleration and heading rate as input feed to the model, and get the predicted (x, y) as output to propagate loss.
+
+![image](https://user-images.githubusercontent.com/24941293/189557634-3e0d8cd1-1606-46f2-9159-1f40781009e2.png)
+
+
 # Testing
 
-avg_ade: 1.152837239360219
-avg_fde: 2.1436020780866762
-avg_missRate: 0.7627215551743853
+- avg_ade: 1.152837239360219
+- avg_fde: 2.1436020780866762
+- avg_missRate: 0.7627215551743853
 
 ## Trajectory Visulization
 
