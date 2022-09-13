@@ -110,9 +110,9 @@ After changing the predict way.
 
 # Testing
 
-- avg_ade: 1.152837239360219
-- avg_fde: 2.1436020780866762
-- avg_missRate: 0.7627215551743853
+- avg_ade: 1.152
+- avg_fde: 2.143
+- avg_missRate: 0.762
 
 ## Trajectory Visulization
 
